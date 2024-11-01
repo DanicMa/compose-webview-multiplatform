@@ -1,5 +1,8 @@
 @file:Suppress("UNUSED_VARIABLE", "OPT_IN_USAGE")
 
+import com.vanniktech.maven.publish.SonatypeHost
+
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -107,6 +110,6 @@ fun org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget.setUpiOSObserver()
 }
 
 mavenPublishing {
-    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.S01, automaticRelease = true)
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = false)
     signAllPublications()
 }
